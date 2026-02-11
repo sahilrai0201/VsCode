@@ -4,7 +4,7 @@
 using namespace std;
 
 class Queue {
-    // properties
+    //properties
     int *arr;
     int front;
     int rear;
