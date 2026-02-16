@@ -1,4 +1,4 @@
-//INORDER TRAVERSAL
+//POSTORDER TRAVERSAL
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -78,6 +78,28 @@ void inOrder(node* root){     //LNR
     inOrder(root->right);
 }
 
+void preOrder(node* root){      //NLR
+    //base case
+    if(root == NULL){
+        return;
+    }
+
+    cout << root->data << " ";
+    preOrder(root->left);
+    preOrder(root->right);
+}
+
+void postOrder(node* root){      //LRN
+    //base case
+    if(root == NULL){
+        return;
+    }
+
+    preOrder(root->left);
+    preOrder(root->right);
+    cout << root->data << " ";
+}
+
 int main(){
 
     node *root = NULL;
@@ -90,11 +112,26 @@ int main(){
     //level order
     cout << "Printing the level order traversal output : " << endl;
     levelOrderTraversal(root);
+    cout << endl;
 
 
     //Inorder traversal
     cout << "Inorder traversal is : " << endl;
     inOrder(root);
+    cout << endl;
+    cout << endl;
+
+    //Preorder traversal
+    cout << "Preorder traversal is : " << endl;
+    preOrder(root);
+    cout << endl;
+    cout << endl;
+
+    //Postorder traversal
+    cout << "Postorder traversal is : " << endl;
+    postOrder(root);
+    cout << endl;
+    cout << endl;
 
 
     return 0;
