@@ -38,7 +38,6 @@ int main(){
 
 
 //if we have to find gcd of all the elements of an array : (GFG) ->
-
 // class Solution {
 //   public:
 //     int findGCD(int a, int b){
