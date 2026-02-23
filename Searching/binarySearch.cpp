@@ -1,45 +1,38 @@
-#include<bits/stdc++.h>
+//this is my first change
+
+#include <iostream>               
 using namespace std;
 
-int binarySearch(vector<int> arr, int n, int k){
-    int ans = -1;
-    int start = 0;
-    int end = n-1;
+bool binarySearch (int arr[], int start, int end, int key) {
+    
+    //base case
+    if (start > end) {
+        return false;
+    }
 
     int mid = start + (end - start) / 2;
-    while(start <= end){
-        if(arr[mid] == k){
-            ans = mid;
-            end = mid - 1;
-        }
-        else if(arr[mid] > k){
-            end = mid - 1;
-        }
-        else{
-            //arr[mid] < k
-            start = mid + 1;
-        }
-        mid = start + (end - start) / 2;
+    if (arr[mid] == key) {
+        return true;
     }
-    return ans;
+
+    //recursive case
+    if (arr[mid] < key) {
+        return binarySearch (arr, mid + 1, end, key);
+    } 
+    else { 
+        return binarySearch (arr, start, mid - 1, key);
+    }
+
 }
 
-int main(){
-    int n;
-    cout << "Enter the size of an array : " << endl;
-    cin >> n;
+int main() {
 
-    vector<int> arr(n);
-    cout << "Enter the elements of an array : " << endl;
-    for(int i=0; i<n; i++){
-        cin >> arr[i];
-    }
+    int arr[6] = {2, 4, 6, 9, 11, 13};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int key = 8;
 
-    int target;
-    cout << "Enter the target that to be searched in array : " << endl;
-    cin >> target;
+    //present - 1 & not present - 0
+    cout << " Present or not : " << binarySearch (arr, 0, n-1, key) << endl;     
 
-    int result = binarySearch(arr, n, target);
-
-    cout << "After applying binary search on the given array, target is at index : " << result << endl;
+    return 0;
 }
