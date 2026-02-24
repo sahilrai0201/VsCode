@@ -1,3 +1,5 @@
+//Given an array, answer multiple queries asking: How many times does a number appear in array?
+
 #include<bits/stdc++.h>
 using namespace std;
 
