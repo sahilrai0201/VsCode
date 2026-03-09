@@ -2,7 +2,6 @@
 using namespace std;
 
 int partition(int arr[], int start, int end) {
-
     int pivot = arr[start];
 
     int count = 0;
@@ -33,11 +32,8 @@ int partition(int arr[], int start, int end) {
 }
 
 void quickSort(int arr[], int start, int end) {
-
     //base case
-    if(start >= end) {
-        return;
-    }
+    if(start >= end) return;
 
     //partiton
     int p = partition(arr, start, end);
@@ -50,7 +46,6 @@ void quickSort(int arr[], int start, int end) {
 }
 
 int main() {
-
     int arr[10] = {2, 6, 5, 7, 11, 9, 3, 8 , 4, 10};
     int n = sizeof(arr)/sizeof(arr[0]);
 
@@ -59,7 +54,8 @@ int main() {
     cout << "Sorted array : ";
     for(int i = 0; i < n; i++) {
         cout << arr[i] << " ";
-    } cout << endl;
+    } 
+    cout << endl;
 
     return 0;
 }

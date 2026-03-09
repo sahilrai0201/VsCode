@@ -38,3 +38,41 @@ int main(){
 
     return 0;
 }
+
+
+
+//RECURSIVE INSERTION SORT
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// void insertionSort(int arr[], int n){ 
+//     // Base case
+//     if(n <= 1){
+//         return;
+//     }
+
+//     // Sort first n-1 elements
+//     insertionSort(arr, n-1);
+
+//     // Insert last element at correct position
+//     int last = arr[n-1];
+//     int j = n-2;
+
+//     while(j >= 0 && arr[j] > last){
+//         arr[j+1] = arr[j];
+//         j--;
+//     }
+
+//     arr[j+1] = last;
+// }
+
+// int main(){
+//     int arr[] = {5, 3, 4, 1, 2};
+//     int n = 5;
+
+//     insertionSort(arr, n);
+
+//     for(int i=0;i<n;i++){
+//         cout << arr[i] << " ";
+//     }
+// }

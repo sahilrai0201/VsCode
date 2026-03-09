@@ -46,7 +46,6 @@ void merge(int arr[], int start, int end) {
 }
 
 void mergeSort(int arr[], int start, int end) {
-
     //base case
     if(start >= end) return;
 
@@ -60,11 +59,9 @@ void mergeSort(int arr[], int start, int end) {
 
     //merge both parts
     merge(arr, start, end);
-
 }
 
 int main() {
-
     int arr[6] = {2,6,4,5,11,7};
     int n = sizeof(arr) / sizeof(arr[0]);
 
